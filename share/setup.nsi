@@ -10,11 +10,11 @@ SetCompressor /SOLID lzma
 !define URL https://www.etp.org/
 
 # MUI Symbol Definitions
-!define MUI_ICON "/home/etptoken/etp/share/pixmaps/bitcoin.ico"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/etptoken/etp/share/pixmaps/nsis-wizard.bmp"
+!define MUI_ICON "/home/etptoken/etp4/share/pixmaps/bitcoin.ico"
+!define MUI_WELCOMEFINISHPAGE_BITMAP "/home/etptoken/etp4/share/pixmaps/nsis-wizard.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_HEADERIMAGE_RIGHT
-!define MUI_HEADERIMAGE_BITMAP "/home/etptoken/etp/share/pixmaps/nsis-header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "/home/etptoken/etp4/share/pixmaps/nsis-header.bmp"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_REGISTRY_KEY ${REGKEY}
@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER "Etp Core"
 !define MUI_FINISHPAGE_RUN $INSTDIR\etp-qt.exe
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall.ico"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/etptoken/etp/share/pixmaps/nsis-wizard.bmp"
+!define MUI_UNWELCOMEFINISHPAGE_BITMAP "/home/etptoken/etp4/share/pixmaps/nsis-wizard.bmp"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -48,7 +48,7 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile /home/etptoken/etp/etpcore-${VERSION}-win-setup.exe
+OutFile /home/etptoken/etp4/etpcore-${VERSION}-win-setup.exe
 !if "" == "64"
 InstallDir $PROGRAMFILES64\EtpCore
 !else
@@ -73,14 +73,14 @@ ShowUninstDetails show
 Section -Main SEC0000
     SetOutPath $INSTDIR
     SetOverwrite on
-    File /home/etptoken/etp/release/etp-qt.exe
-    File /oname=COPYING.txt /home/etptoken/etp/COPYING
-    File /oname=readme.txt /home/etptoken/etp/doc/README_windows.txt
+    File /home/etptoken/etp4/release/etp-qt.exe
+    File /oname=COPYING.txt /home/etptoken/etp4/COPYING
+    File /oname=readme.txt /home/etptoken/etp4/doc/README_windows.txt
     SetOutPath $INSTDIR\daemon
-    File /home/etptoken/etp/release/etpd.exe
-    File /home/etptoken/etp/release/etp-cli.exe
+    File /home/etptoken/etp4/release/etpd.exe
+    File /home/etptoken/etp4/release/etp-cli.exe
     SetOutPath $INSTDIR\doc
-    File /r /home/etptoken/etp/doc\*.*
+    File /r /home/etptoken/etp4/doc\*.*
     SetOutPath $INSTDIR
     WriteRegStr HKCU "${REGKEY}\Components" Main 1
 
